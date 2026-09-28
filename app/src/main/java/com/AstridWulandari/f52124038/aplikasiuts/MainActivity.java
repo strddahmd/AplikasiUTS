@@ -18,30 +18,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Hubungkan komponen dengan XML
         etCari = findViewById(R.id.etCari);
         btnCari = findViewById(R.id.btnCari);
 
-        // Tombol Cari
         btnCari.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String lagu = etCari.getText().toString();
 
-                String lagu = etCari.getText().toString().trim();
-
-                if (lagu.isEmpty()) {
-                    Toast.makeText(
-                            MainActivity.this,
-                            "Masukkan nama lagu",
-                            Toast.LENGTH_SHORT
-                    ).show();
-                } else {
-                    Toast.makeText(
-                            MainActivity.this,
-                            "Mencari: " + lagu,
-                            Toast.LENGTH_SHORT
-                    ).show();
-                }
+                Toast.makeText(
+                        MainActivity.this,
+                        "Mencari: " + lagu,
+                        Toast.LENGTH_SHORT
+                ).show();
             }
         });
     }
